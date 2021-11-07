@@ -1,0 +1,15 @@
+.product {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.image img {
+  max-width: 300px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}

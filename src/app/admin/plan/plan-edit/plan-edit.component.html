@@ -1,0 +1,66 @@
+<form [formGroup]="formulario" (ngSubmit)="editItem($event)">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Actualizar Paquete</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field class="item">
+                        <input placeholder="Nombre" matInput formControlName="descripcion" type="text">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-xs">
+                  <mat-form-field class="item">
+                      <input placeholder="Precio" matInput formControlName="precio" type="number">
+                  </mat-form-field>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-xs">
+                  <mat-form-field class="item">
+                      <mat-label>Seleccione Categoría</mat-label>
+                      <mat-select formControlName="categoriaid">
+                          <mat-option>Seleccione Opción</mat-option>
+                          <mat-option *ngFor="let item of categories" [value]="item._id"> 
+                              {{item.descripcion}}
+                          </mat-option>
+                      </mat-select>
+                  </mat-form-field>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-xs">
+                  <mat-form-field class="item">
+                      <mat-label>Seleccione Vehiculo</mat-label>
+                      <mat-select formControlName="tipovehiculoid">
+                          <mat-option>Seleccione Opción</mat-option>
+                          <mat-option *ngFor="let item of typevehicles" [value]="item._id"> 
+                              {{item.descripcion}}
+                          </mat-option>
+                      </mat-select>
+                  </mat-form-field>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-xs">
+                  <mat-form-field class="item full-width" >
+                      <mat-label>Seleccione Servicios</mat-label>
+                      <mat-select formControlName="serviceid"  multiple>
+                          <mat-option *ngFor="let item of services" [value]="item._id"> 
+                              {{item.descripcion}}
+                          </mat-option>
+                      </mat-select>
+                  </mat-form-field>
+              </div>
+          </div>
+
+            <button mat-raised-button [disabled]="formulario.invalid" color="primary" type="submit">Guardar</button>
+        </mat-card-content>
+    </mat-card>
+
+
+</form>

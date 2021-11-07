@@ -1,0 +1,15 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{product.title | uppercase }}</mat-card-title>
+        <mat-card-subtitle>{{product.price | currency}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="crop-image">
+        <img class="image" [src]="product.image" alt={{product.title}}>
+    </div>
+    <mat-card-content>
+        <p class="description">{{product.description | slice:0:50}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-button routerLink="/products/{{product.id}}">Ver Detalle</a>
+    </mat-card-actions>
+</mat-card>

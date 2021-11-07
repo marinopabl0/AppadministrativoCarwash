@@ -1,0 +1,12 @@
+<div>
+    <h1 class="title">{{title}}</h1>
+</div>
+
+<div class="container">
+    <div class="products">
+        <!-- Se le esta pasando un product por medio de un inputs al componente product.ts-->
+        <app-product class="product" *ngFor="let product of products" (productClicked)="clickProduct($event)"
+            [product]="product">
+        </app-product>
+    </div>
+</div>

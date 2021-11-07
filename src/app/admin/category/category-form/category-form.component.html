@@ -1,0 +1,21 @@
+<form [formGroup]="formulario" (ngSubmit)="saveCategory($event)">
+  <mat-card>
+      <mat-card-header>
+          <mat-card-title>Crear Categoría</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+          <div class="row">
+              <div class="col-xs">
+                  <mat-form-field class="item">
+                      <input placeholder="Nombre" matInput formControlName="descripcion" type="text">
+                  </mat-form-field>
+              </div>
+          </div>
+
+          <button mat-raised-button [disabled]="formulario.invalid" color="primary" type="submit">Guardar</button>
+      </mat-card-content>
+  </mat-card>
+
+
+</form>

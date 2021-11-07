@@ -1,0 +1,15 @@
+<!-- HACIENDO USO DE LA LIBRERÍA SWIPPER -->
+
+<!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let image of images">
+            <!-- Slides -->
+            <img [src]="image" alt="imagen de banner">
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+</div>

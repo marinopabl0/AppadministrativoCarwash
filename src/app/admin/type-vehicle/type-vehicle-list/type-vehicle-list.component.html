@@ -1,0 +1,21 @@
+<a class="btn-create" mat-raised-button routerLink="/admin/typevehicle/create">Crear Tipo Vehiculo</a>
+
+<table mat-table [dataSource]="typevehicles" class="mat-elevation-z8">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef> DESCRIPCIÓN</th>
+        <td mat-cell *matCellDef="let item"> {{item.descripcion}} </td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> ACCIONES</th>
+        <td mat-cell *matCellDef="let item">
+            <a mat-button [routerLink]="['/admin/typevehicle/edit', item._id]">Editar</a>
+            <button mat-button mat-raised-button color="warn"  (click)="deleteItem(item._id)">Eliminar</button>
+        </td>
+    </ng-container>
+
+    <!-- Pone un estilo al encabezado -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

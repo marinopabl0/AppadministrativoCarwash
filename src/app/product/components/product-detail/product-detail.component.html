@@ -1,0 +1,13 @@
+<div *ngIf=" (product$ | async) as product" class="product">
+    <div class="image">
+        <img class="image" [src]="product.image" alt={{product.title}}>
+    </div>
+    <div class="info">
+        <h3 class="title">{{product.title  | uppercase }}</h3>
+        <span class="price">{{product.price  | currency}}</span>
+        <p class="description">{{product.description }}</p>
+        <p>{{today | date:'HH:mm'}}</p>
+        
+        <button>Velver a Servicios</button>
+    </div>
+</div>
